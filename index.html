@@ -1,0 +1,166 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>Payment Assessment</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="wrapper d-flex align-items-stretch">
+
+<nav id="sidebar" class="active">
+<h1><a href="javascript:;" class="logo">P</a></h1>
+
+<ul class="list-unstyled components mb-5">
+<li class="active"><a href=""><span class="fa fa-home"></span> Home</a></li>
+<li><a href="#"><span class="fa fa-exclamation-circle"></span> Notification</a></li>
+</ul>
+
+
+<div class="footer">
+<p>&copy; <?php echo date('Y'); ?> - All rights reserved</p>
+</div>
+</nav>
+
+<div id="content" class="p-4">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container-fluid">
+<button type="button" class="btn btn-primary">
+<i class="fa fa-th"></i>
+<span>Dashboard</span>
+</button>
+<button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<i class="fa fa-bars"></i>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+
+<div class="row">
+
+<!-- <main id="app"> -->
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-6 col-sm-6 col-xs-12" id="userTable">
+        <div class="caption"> Application Pending Assessment</div>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+          <thead class="indigo text-white">
+            <tr>
+              <th>SN</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="data in userDatas">
+              <td>{{data.id}}</td>
+              <td>{{data.name}}</td>
+              <td>{{data.phone}}</td>
+              <td> <a href="#" class="btn btn-info btn-xs">Process</a> </td>
+              <!-- <td><router-link class="btn btn-info btn-xs" :to="{name: 'invoice-edit', params: {appid: data.id}}">Process</router-link></td> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="table-caption"> Application Processed</div>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead class="indigo text-white">
+        <tr>
+          <th>SN</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Johnson Johnson</td>
+          <td>0123456789</td>
+          <td><a href="#" class="btn btn-info"> Processed </a> <a href="#" class="btn btn-primary"> View </a></td>
+        </tr>
+        <tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="col-md-4 col-sm-6 col-xs-12">
+  <div class="table-caption"> Planning Fee Assessment</div>
+  <div class="form-group">
+      <label for="apptype">Application Type</label>
+      <input type="text" name="apptype" v-model="apptype" class="form-control" placeholder="Application Type" required>
+    </div>
+    <div class="form-group">
+      <label for="building">Building Category</label>
+      <input type="text" name="building" v-model="building" class="form-control" placeholder="Building Category" required>
+    </div>
+    <div class="form-group">
+      <label for="dev">Development Type</label>
+      <input type="text" name="dev" v-model="dev" class="form-control" placeholder="Development Type" required>
+    </div>
+    <div class="form-group">
+      <label for="appfee">Application Fee</label>
+      <input type="text" name="appfee" v-model="appfee" class="form-control" placeholder="Application Fee" required>
+    </div>
+    <div class="form-group">
+      <label for="filefee">File Fee</label>
+      <input type="text" name="filefee" v-model="filefee" class="form-control" placeholder="File Fee" required>
+    </div>
+    <div class="form-group">
+      <label for="regfee">Registration Fee</label>
+      <input type="text" name="regfee"  v-model="regfee" class="form-control" placeholder="Registration Fee" required>
+    </div>
+    <div class="form-group">
+      <label for="amount">Total Amount</label>
+      <input type="text" name="amount" v-model="amount" class="form-control" value="3000" required>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="go">
+      <label class="form-check-label" for="go">Confirm Amount</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+
+
+  </div>
+<!-- </main> -->
+</div>
+
+
+
+</div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/vue-router.js"></script>
+<script src="js/vuex.js"></script>
+</body>
+</html>
